@@ -29,6 +29,7 @@ class run{
             } 
             System.out.println("---");*/
 
+            // Displays the balls in the slots.
             for(int slot : slotsArray(slots, slotsArr)){
                 if(slot == fallSlot(layers)){
                     System.out.print(" O ");
@@ -37,7 +38,7 @@ class run{
                     System.out.print(" _ ");
                 }
             }
-            
+
             System.out.println();
 
             // System.out.println(fallSlot(layers));
