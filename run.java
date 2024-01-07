@@ -56,7 +56,7 @@ class run{
         for(int i = 1; i <= count; i++){
             for(int j = 0; j < slotsFilled.length; j++){
                 if(slotsFilled[j] != 0){
-                    System.out.print(" 0 ");
+                    System.out.print(" O ");
                     slotsFilled[j]--;
                 }
                 else if(slotsFilled[j] == 0){
