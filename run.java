@@ -8,10 +8,12 @@ class run{
         int balls = sc.nextInt();
         System.out.println("-----------------------------------------");
         System.out.println("-----------------------------------------");
+        System.out.println("Inverse display of the balls as seen in the slots of the Galton Box");
 
         int [] layers = new int [slots - 1];
         int [] slotsArr = new int [slots];
         int [] ballsArr = new int [balls];
+        int [] slotsFilled = new int [slots];
 
         slotsArray(slots, slotsArr);
 
@@ -21,28 +23,57 @@ class run{
         System.out.println("---");*/
 
         ballsArray(ballsArr);
+        int count = 0;
         for(int ball: ballsArr){
             updateLayers(layers);
+            count++;
 
             /*for(int no : layers){
                 System.out.print(no+" ");
             } 
-            System.out.println("---");*/
 
             // Displays the balls in the slots.
-            for(int slot : slotsArray(slots, slotsArr)){
+            /*for(int slot : slotsArray(slots, slotsArr)){
                 if(slot == fallSlot(layers)){
                     System.out.print(" O ");
                 }
                 else{
                     System.out.print(" _ ");
                 }
-            }
+            }*/
 
+            for(int i = 0; i < slotsArray(slots, slotsArr).length; i++){
+                if(slotsArray(slots, slotsArr)[i] == fallSlot(layers)){
+                    for(int j = 0; j < slotsFilled.length; j++){
+                        if(j == i){
+                            slotsFilled[j]++;
+                        }
+                    }
+                }
+            }
+            
+            /*for(int values : slotsFilled){
+                System.out.print(values+" ");
+            }*/
+
+        }
+        
+        for(int i = 1; i <= count; i++){
+            for(int j = 0; j < slotsFilled.length; j++){
+                if(slotsFilled[j] != 0){
+                    System.out.print(" 0 ");
+                    slotsFilled[j]--;
+                }
+                else if(slotsFilled[j] == 0){
+                    System.out.print("   ");
+                }
+            }
+            count--;
             System.out.println();
 
-            // System.out.println(fallSlot(layers));
-            // System.out.println("------------");
+            /*for(int values : slotsFilled){
+                System.out.print(values+" ");
+            }*/
         }
     }
 
