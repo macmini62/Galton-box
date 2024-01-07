@@ -16,12 +16,6 @@ class run{
         int [] slotsFilled = new int [slots];
 
         slotsArray(slots, slotsArr);
-
-        /*for(int i : slotsArr){
-            System.out.print(i+" ");
-        }
-        System.out.println("---");*/
-
         ballsArray(ballsArr);
         int count = 0;
         for(int ball: ballsArr){
@@ -32,13 +26,13 @@ class run{
                 System.out.print(no+" ");
             } 
 
-            // Displays the balls in the slots.
-            /*for(int slot : slotsArray(slots, slotsArr)){
+            // Displays each ball in its slot.
+            for(int slot : slotsArray(slots, slotsArr)){
                 if(slot == fallSlot(layers)){
                     System.out.print(" O ");
                 }
                 else{
-                    System.out.print(" _ ");
+                    System.out.print("   ");
                 }
             }*/
 
@@ -58,7 +52,7 @@ class run{
 
         }
 
-        // Displays the balls in the Galton Box.
+        // Displays all the balls in the Galton Box.
         for(int i = 1; i <= count; i++){
             for(int j = 0; j < slotsFilled.length; j++){
                 if(slotsFilled[j] != 0){
