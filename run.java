@@ -7,8 +7,8 @@ class run{
             System.out.println("Enter number of balls to launch: ");
             int balls = sc.nextInt();
             System.out.println("-----------------------------------------");
-            System.out.println("-----------------------------------------");
             System.out.println("Inverse display of the balls as seen in the Galton Box");
+            System.out.println("------------------------------------------------------");
 
             int [] layers = new int [slots - 1];
             int [] slotsArr = new int [slots];
