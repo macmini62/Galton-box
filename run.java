@@ -53,18 +53,23 @@ class run{
             }
 
             // Displays all the balls in the Galton Box.
-            for(int i = 1; i <= count; i++){
-                for(int j = 0; j < slotsFilled.length; j++){
-                    if(slotsFilled[j] != 0){
-                        System.out.print(" O ");
-                        slotsFilled[j]--;
+            int displayed = 0;
+            while (count != 0){
+                for(int i = 1; i <= count; i++){
+                    for(int j = 0; j < slotsFilled.length; j++){
+                        if(slotsFilled[j] != 0){
+                            System.out.print(" O ");
+                            slotsFilled[j]--;
+                            displayed++;
+                        }
+                        else if(slotsFilled[j] == 0){
+                            System.out.print("   ");
+                        }
                     }
-                    else if(slotsFilled[j] == 0){
-                        System.out.print("   ");
-                    }
+                    count = count - displayed;
+                    displayed = 0;
+                    System.out.println();
                 }
-                count--;
-                System.out.println();
 
                 /*for(int values : slotsFilled){
                     System.out.print(values+" ");
