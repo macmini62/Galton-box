@@ -57,7 +57,8 @@ class run{
             }*/
 
         }
-        
+
+        // Displays the balls in the Galton Box.
         for(int i = 1; i <= count; i++){
             for(int j = 0; j < slotsFilled.length; j++){
                 if(slotsFilled[j] != 0){
